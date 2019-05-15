@@ -1,7 +1,7 @@
+Credit to Doug Black for original version of this
+
 " Colors {{{
 syntax enable           " enable syntax processing
-colorscheme badwolf
-set termguicolors
 " }}}
 " Misc {{{
 set backspace=indent,eol,start
