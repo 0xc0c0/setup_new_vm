@@ -16,15 +16,4 @@ git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerl
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 
 #dotfiles re-installation
-if [ -d ~/.local/dotfiles ]; then
-    rm -rf ~/.local/dotfiles
-fi
-
-mkdir -p ~/.local
-git clone https://github.com/benchillingt/dotfiles ~/.local/dotfiles
-if [ $? == 0 ]; then
-    pushd ~/.local/dotfiles
-    make all
-    popd
-fi
-
+make all
