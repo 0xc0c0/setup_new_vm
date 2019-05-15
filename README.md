@@ -1,5 +1,6 @@
 # Recommended Installation
-`git clone https://github.com/benchillingt/setup_new_vm ~/.local/setup_new_vm`
+`sudo apt-get install curl`
+`sh -c "$(curl https://raw.githubusercontent.com/benchillingt/setup_new_vm/master/setup.sh)"`
 
 ## setup.sh
 script to run on new Ubuntu 18.04 installation:
