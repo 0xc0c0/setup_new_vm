@@ -1,5 +1,4 @@
-Credit to Doug Black for original version of this
-
+" Credit to Doug Black for original version of this
 " Colors {{{
 syntax enable           " enable syntax processing
 " }}}
