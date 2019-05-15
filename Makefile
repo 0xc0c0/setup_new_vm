@@ -1,9 +1,11 @@
+DIR=dotfiles
+
 all:
-	cp .vimrc ~/.
-	cp .zshrc ~/.
-	cp .bashrc ~/.
+	cp $(DIR)/.vimrc ~/.
+	cp $(DIR)/.zshrc ~/.
+	cp $(DIR)/.bashrc ~/.
 
 update:
-	cp ~/.vimrc .
-	cp ~/.zshrc .
-	cp ~/.bashrc .
+	cp ~/.vimrc $(DIR)/.
+	cp ~/.zshrc $(DIR)/.
+	cp ~/.bashrc $(DIR)/.
