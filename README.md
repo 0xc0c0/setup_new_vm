@@ -1,5 +1,5 @@
 # Recommended Installation
-`sudo apt-get install curl`
+`sudo apt-get install curl`\
 `sh -c "$(curl https://raw.githubusercontent.com/benchillingt/setup_new_vm/master/setup.sh)"`
 
 ## setup.sh
