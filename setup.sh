@@ -1,8 +1,8 @@
 #!/bin/bash
 
 #Ubuntu package updates and installation
+sudo apt-get update && sudo apt-get install -y vim i3 wget curl git build-essential make gcc linux-headers-$(uname -r) zsh fonts-powerline 
 sudo apt-get update && sudo apt-get -y upgrade && sudo apt-get -y dist-upgrade && sudo apt-get -y autoremove
-sudo apt-get install -y vim i3 wget curl git build-essential make gcc linux-headers-$(uname -r) zsh fonts-powerline 
 
 #install oh-my-zsh
 if [ -d ~/.oh-my-zsh ]; then
@@ -22,9 +22,9 @@ if [ $(pwd) == ~/.local/setup_new_vm ]; then
 else
     #this file was run using a piped shell command, need the repo now
     git clone https://github.com/benchillingt/setup_new_vm ~/.local/setup_new_vm
-    pushd ~/.local/setup_new_vm
+    cd ~/.local/setup_new_vm
     make all
-    popd
+    cd -
 fi
 
     
