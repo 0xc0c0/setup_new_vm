@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Ubuntu package updates and installation
-sudo apt-get update && sudo apt-get install -y vim i3 wget curl git build-essential make gcc linux-headers-$(uname -r) zsh fonts-powerline 
+sudo apt-get update && sudo apt-get install -y vim i3 wget curl git build-essential make gcc linux-headers-$(uname -r) zsh fonts-powerline libvirt-clients
 sudo apt-get update && sudo apt-get -y upgrade && sudo apt-get -y dist-upgrade && sudo apt-get -y autoremove
 
 #install oh-my-zsh
