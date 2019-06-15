@@ -4,6 +4,16 @@
 sudo apt-get update && sudo apt-get install -y vim i3 wget curl git build-essential make gcc linux-headers-$(uname -r) zsh fonts-powerline libvirt-clients
 sudo apt-get update && sudo apt-get -y upgrade && sudo apt-get -y dist-upgrade && sudo apt-get -y autoremove
 
+#check if VM will be managing libvirt backend
+echo "Install libvirt client-side tools? (default=No, enter 'Yes' for yes)"
+read input
+if [[ $input == "Yes" ]]; the
+    echo "Installing libvirt client-side tools..."
+    sudo apt-get install libvirt-clients virtinst
+else
+    echo "Skipping libvirt client-side tools..."
+fi
+
 #install oh-my-zsh
 if [ -d ~/.oh-my-zsh ]; then
     rm -rf ~/.oh-my-zsh
