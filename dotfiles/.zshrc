@@ -103,3 +103,11 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+source ~/.bash_aliases
+
+export GPG_TTY="$(tty)"
+#export SSH_AUTH_SOCK="$HOME/.gnupg/S.gpg-agent.ssh"
+export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/gnupg/S.gpg-agent.ssh"
+gpg-connect-agent updatestartuptty /bye >/dev/null
+
