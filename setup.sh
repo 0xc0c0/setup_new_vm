@@ -14,6 +14,18 @@ else
     echo "Skipping libvirt client-side tools..."
 fi
 
+#check if user wants slack & discord installed
+echo "Install slack & discord apps? (default=No, enter 'Yes' for yes)"
+read input
+if [[ $input == "Yes" ]]; the
+    echo "Installing slack..."
+    sudo snap install --classic slack
+    echo "Installing discord..."
+    sudo snap install discord
+else
+    echo "Skipping slack & discord..."
+fi
+
 #install oh-my-zsh
 if [ -d ~/.oh-my-zsh ]; then
     rm -rf ~/.oh-my-zsh
