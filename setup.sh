@@ -7,7 +7,7 @@ sudo apt-get update && sudo apt-get -y upgrade && sudo apt-get -y dist-upgrade &
 #check if VM will be managing libvirt backend
 echo "Install libvirt client-side tools? (default=No, enter 'Yes' for yes)"
 read input
-if [[ $input == "Yes" ]]; the
+if [[ $input == "Yes" ]]; then
     echo "Installing libvirt client-side tools..."
     sudo apt-get install libvirt-clients virtinst
 else
@@ -17,7 +17,7 @@ fi
 #check if user wants slack & discord installed
 echo "Install slack & discord apps? (default=No, enter 'Yes' for yes)"
 read input
-if [[ $input == "Yes" ]]; the
+if [[ $input == "Yes" ]]; then
     echo "Installing slack..."
     sudo snap install --classic slack
     echo "Installing discord..."
