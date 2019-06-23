@@ -19,7 +19,7 @@ set $w4 4
 set $w5 5 firefox
 set $w6 6 slack
 set $w7 7 discord
-set $w8 8 mplabx
+set $w8 8 
 set $w9 9
 set $w10 10
 
@@ -184,7 +184,7 @@ exec --no-startup-id firefox
 for_window [class="Code"] move container to workspace $w3
 #exec --no-startup-id code
 
-for_window [class="MPLAB X IDE.*"] move container to workspace $w8
+#for_window [class="MPLAB X IDE.*"] move container to workspace $w8
 #exec --no-startup-id mplab_ide
 
 for_window [class="Slack"] move container to workspace $w6
