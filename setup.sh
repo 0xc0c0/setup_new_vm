@@ -51,7 +51,7 @@ fi
 
 #gnome-terminal settings update
 if [ -f "$(which gsettings)" ]; then
-    echo "Update terminal config settings for DejaVu Sans Mono? Need 'Yes' to confirm: "
+    echo "Update terminal config settings for DejaVu Sans Mono and update colors to dark theme? (Need 'Yes' to confirm: "
     read input
     if [[ $input == 'Yes' ]]; then
         echo "Please enter your desired font size: (default=12)"
@@ -62,5 +62,8 @@ if [ -f "$(which gsettings)" ]; then
             profile=$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d \')
             gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" font "DejaVu Sans Mono $input"
             gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" use-system-font false
+            dconf write "/org/gnome/terminal/legacy/profiles:/:$profile/use-theme-colors false"
+            dconf write "/org/gnome/terminal/legacy/profiles:/:$profile/foreground-color 'rgb(211,215,207)'"
+            dconf write "/org/gnome/terminal/legacy/profiles:/:$profile/background-color 'rgb(46,52,54)'"
     fi
 fi
