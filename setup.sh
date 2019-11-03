@@ -62,8 +62,8 @@ if [ -f "$(which gsettings)" ]; then
             profile=$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d \')
             gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" font "DejaVu Sans Mono $input"
             gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" use-system-font false
-            dconf write "/org/gnome/terminal/legacy/profiles:/:$profile/use-theme-colors false"
-            dconf write "/org/gnome/terminal/legacy/profiles:/:$profile/foreground-color 'rgb(211,215,207)'"
-            dconf write "/org/gnome/terminal/legacy/profiles:/:$profile/background-color 'rgb(46,52,54)'"
+            dconf write /org/gnome/terminal/legacy/profiles:/:$profile/use-theme-colors 'false'
+            dconf write /org/gnome/terminal/legacy/profiles:/:$profile/foreground-color 'rgb(211,215,207)'
+            dconf write /org/gnome/terminal/legacy/profiles:/:$profile/background-color 'rgb(46,52,54)'
     fi
 fi
