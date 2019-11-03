@@ -60,7 +60,7 @@ if [ -f "$(which gsettings)" ]; then
                 input = 12
             fi
             profile=$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d \')
-            gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" font 'DejaVu Sans Mono $input'
+            gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" font "DejaVu Sans Mono $input"
             gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" use-system-font false
     fi
 fi
