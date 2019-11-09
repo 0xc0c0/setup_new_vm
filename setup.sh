@@ -57,7 +57,7 @@ if [ -f "$(which gsettings)" ]; then
         echo "Please enter your desired font size: (default=12)"
         read input
             if [[ ! $input =~ ^[[:digit:]]+$ ]]; then
-                input = 12
+                input=12
             fi
             profile=$(gsettings get org.gnome.Terminal.ProfilesList default | tr -d \')
             gsettings set "org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$profile/" font "DejaVu Sans Mono $input"
