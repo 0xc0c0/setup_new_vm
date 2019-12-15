@@ -15,7 +15,7 @@ set $mod_alt Mod1
 set $w1 1 admin
 set $w2 2
 set $w3 3 vscode
-set $w4 4
+set $w4 4 pianobar
 set $w5 5 firefox
 set $w6 6 slack
 set $w7 7 discord
@@ -183,6 +183,9 @@ exec --no-startup-id firefox
 
 for_window [class="Code"] move container to workspace $w3
 #exec --no-startup-id code
+
+#put a pianobar session in tab 4
+exec --no-startup-id "i3-msg 'workspace $w4; exec gnome-terminal -e pianobar'"
 
 #for_window [class="MPLAB X IDE.*"] move container to workspace $w8
 #exec --no-startup-id mplab_ide
