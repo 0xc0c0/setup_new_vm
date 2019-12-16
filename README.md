@@ -14,7 +14,7 @@ script to run on new Ubuntu 18.04 installation:
 dotfiles basic install & update via the Makefile
 
 ### install
-`make` or `make all`
+`make install`
 
 ### update local repo files from your active dotfiles in your ~/ directory
 `make update`

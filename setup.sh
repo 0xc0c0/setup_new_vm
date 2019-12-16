@@ -40,12 +40,12 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/p
 #dotfiles installation
 if [[ -d .git ]] && [[ "$(cat .git/config)" =~ 'c0c0-work/setup_new_vm.git' ]]; then
     #the repo was already cloned before this file was run
-    make all
+    make install
 else
     #this file was run using a piped shell command, need the repo now
     git clone https://github.com/c0c0-work/setup_new_vm.git ~/.local/setup_new_vm
     cd ~/.local/setup_new_vm
-    make all
+    make install
     cd -
 fi
 
