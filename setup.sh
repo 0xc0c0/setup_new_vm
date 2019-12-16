@@ -67,5 +67,6 @@ if [ -f "$(which gsettings)" ]; then
             dconf write /org/gnome/terminal/legacy/profiles:/:$profile/use-theme-colors 'false'
             dconf write /org/gnome/terminal/legacy/profiles:/:$profile/foreground-color "'rgb(211,215,207)'"
             dconf write /org/gnome/terminal/legacy/profiles:/:$profile/background-color "'rgb(46,52,54)'"
+            dconf write /org/gnome/terminal/legacy/profiles:/:$profile/audible-bell 'false'
     fi
 fi
