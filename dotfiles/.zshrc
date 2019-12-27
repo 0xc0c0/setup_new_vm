@@ -104,7 +104,9 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-source ~/.bash_aliases
+if [[ -f ~/.bash_aliases ]]; then
+    source ~/.bash_aliases
+fi
 
 if [[ -d ~/.gnupg ]]; then
     export GPG_TTY="$(tty)"
