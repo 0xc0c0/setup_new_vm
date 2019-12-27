@@ -106,8 +106,10 @@ source $ZSH/oh-my-zsh.sh
 
 source ~/.bash_aliases
 
-export GPG_TTY="$(tty)"
-#export SSH_AUTH_SOCK="$HOME/.gnupg/S.gpg-agent.ssh"
-export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/gnupg/S.gpg-agent.ssh"
-gpg-connect-agent updatestartuptty /bye >/dev/null
+if [[ -d ~/.gnupg ]]; then
+    export GPG_TTY="$(tty)"
+    #export SSH_AUTH_SOCK="$HOME/.gnupg/S.gpg-agent.ssh"
+    export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/gnupg/S.gpg-agent.ssh"
+    gpg-connect-agent updatestartuptty /bye >/dev/null
+fi
 
