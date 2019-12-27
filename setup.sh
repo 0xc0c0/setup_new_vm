@@ -4,6 +4,8 @@
 sudo apt-get update && sudo apt-get install -y vim i3 gnome wget curl git build-essential make gcc linux-headers-$(uname -r) zsh fonts-powerline pianobar
 sudo apt-get update && sudo apt-get -y upgrade && sudo apt-get -y dist-upgrade && sudo apt-get -y autoremove
 
+LOCAL_GIT=~/.local/git
+
 #check if VM will be managing libvirt backend
 echo "Install libvirt client-side tools? (default=No, enter 'Yes' for yes)"
 read input
@@ -43,8 +45,9 @@ if [[ -d .git ]] && [[ "$(cat .git/config)" =~ 'c0c0-work/setup_new_vm.git' ]]; 
     make install
 else
     #this file was run using a piped shell command, need the repo now
-    git clone https://github.com/c0c0-work/setup_new_vm.git ~/.local/setup_new_vm
-    cd ~/.local/setup_new_vm
+    mkdir -p "$LOCAL_GIT"
+    git clone https://github.com/c0c0-work/setup_new_vm.git "$LOCAL_GIT"/setup_new_vm
+    cd "$LOCAL_GIT"/setup_new_vm
     make install
     cd -
 fi
