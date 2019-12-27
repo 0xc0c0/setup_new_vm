@@ -54,7 +54,7 @@ fi
 
 #gnome-terminal settings update
 if [ -f "$(which gsettings)" ]; then
-    echo "Update terminal config settings for DejaVu Sans Mono and update colors to dark theme? (Need 'Yes' to confirm: "
+    echo "Update terminal config settings for DejaVu Sans Mono and update colors to dark theme? (Need 'Yes' to confirm): "
     read input
     if [[ $input == 'Yes' ]]; then
         echo "Please enter your desired font size: (default=12)"
@@ -73,3 +73,20 @@ if [ -f "$(which gsettings)" ]; then
             dconf write /org/gnome/terminal/legacy/profiles:/:$profile/audible-bell 'false'
     fi
 fi
+
+#check if user wants to also grab a clone of the gpg yubikey installer repo from GitHub
+GPG_YUBIKEY=gpg_yubikey_installer
+GPG_YUBIKEY_GITHUB="https://github.com/c0c0-work/$GPG_YUBIKEY.git"
+echo "Run GPG + Yubikey installer script after this, from $GPG_YUBIKEY_GITHUB ? (default=No, enter 'Yes' for yes)"
+read input
+if [[ $input == "Yes" ]]; then
+    git clone "$GPG_YUBIKEY_GITHUB" "$LOCAL_GIT/$GPG_YUBIKEY"
+    if [[ -d $LOCAL_GIT/$GPG_YUBIKEY ]]; then
+        echo "Cloned successfully to $LOCAL_GIT/$GPG_YUBIKEY"
+    else
+        echo "Unsuccessful clone attempt."
+    fi
+else    
+    echo "Skipping GPG + Yubikey..."
+fi
+
