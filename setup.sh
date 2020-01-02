@@ -13,7 +13,8 @@ if [[ "$?" != "0" ]]; then
 else
     echo "updating system via APT and installing several baseline packages for this installation..."
     sudo apt-get update && sudo apt-get -y upgrade && sudo apt-get -y dist-upgrade && sudo apt-get -y autoremove
-    sudo apt-get install vim wget curl git build-essential make gcc linux-headers-$(uname -r)
+    sudo apt-get install -y vim wget curl git build-essential make gcc 
+    sudo apt-get install -y linux-headers-$(uname -r)
 fi
 
 #Ubuntu package updates and installation
@@ -35,7 +36,7 @@ echo "Install libvirt client-side tools? (default=No, enter 'Yes' for yes)"
 read input
 if [[ $input == "Yes" ]]; then
     echo "Installing libvirt client-side tools..."
-    sudo apt-get install libvirt-clients virtinst
+    sudo apt-get install -y libvirt-clients virtinst
 else
     echo "Skipping libvirt client-side tools..."
 fi
@@ -59,7 +60,7 @@ if [[ $input == "Yes" ]]; then
     if [ -d ~/.oh-my-zsh ]; then
         rm -rf ~/.oh-my-zsh
     fi
-    sudo apt-get install zsh fonts-powerline
+    sudo apt-get install -y zsh fonts-powerline
     sh -c "$(curl https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
     $(grep 'export ZSH=' ~/.zshrc | sed s/\"//g)
     export ZSH_CUSTOM=$ZSH/custom
