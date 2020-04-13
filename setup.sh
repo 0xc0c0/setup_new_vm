@@ -72,13 +72,13 @@ echo "Install dotfiles? (default=No, enter 'Yes' for yes)"
 read input
 if [[ $input == "Yes" ]]; then
     #dotfiles installation
-    if [[ -d .git ]] && [[ "$(cat .git/config)" =~ 'c0c0-work/setup_new_vm.git' ]]; then
+    if [[ -d .git ]] && [[ "$(cat .git/config)" =~ '0xc0c0/setup_new_vm.git' ]]; then
         #the repo was already cloned before this file was run
         make install
     else
         #this file was run using a piped shell command, need the repo now
         mkdir -p "$LOCAL_GIT"
-        git clone https://github.com/c0c0-work/setup_new_vm.git "$LOCAL_GIT"/setup_new_vm
+        git clone https://github.com/0xc0c0/setup_new_vm.git "$LOCAL_GIT"/setup_new_vm
         cd "$LOCAL_GIT"/setup_new_vm
         make install
         cd -
@@ -115,7 +115,7 @@ fi
 
 #check if user wants to also grab a clone of the gpg yubikey installer repo from GitHub
 GPG_YUBIKEY=gpg_yubikey_installer
-GPG_YUBIKEY_GITHUB="https://github.com/c0c0-work/$GPG_YUBIKEY.git"
+GPG_YUBIKEY_GITHUB="https://github.com/0xc0c0/$GPG_YUBIKEY.git"
 echo "Run GPG + Yubikey installer script after this, from $GPG_YUBIKEY_GITHUB ? (default=No, enter 'Yes' for yes)"
 read input
 if [[ $input == "Yes" ]]; then
