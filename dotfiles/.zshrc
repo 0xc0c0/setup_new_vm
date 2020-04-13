@@ -115,3 +115,6 @@ if [[ -d ~/.gnupg ]]; then
     gpg-connect-agent updatestartuptty /bye >/dev/null
 fi
 
+if [[ $(command -v figlet 1>/dev/null) ]] && [[ $(command -v lolcat 1>/dev/null) ]]; then
+    figlet -t "$(whoami) @ $(hostname)" -f slant | lolcat
+fi
