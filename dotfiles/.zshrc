@@ -12,6 +12,8 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 ZSH_DISABLE_COMPFIX=true
 
+export XCURSOR_PATH=$RUNTIME/usr/share/icons
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
@@ -115,6 +117,6 @@ if [[ -d ~/.gnupg ]]; then
     gpg-connect-agent updatestartuptty /bye >/dev/null
 fi
 
-if [[ $(command -v figlet 1>/dev/null) ]] && [[ $(command -v lolcat 1>/dev/null) ]]; then
+if [[ $(command -v figlet) ]] && [[ $(command -v lolcat) ]]; then
     figlet -t "$(whoami) @ $(hostname)" -f slant | lolcat
 fi

@@ -12,13 +12,13 @@
 set $mod Mod4
 set $mod_alt Mod1
 
-set $w1 1 admin
-set $w2 2
-set $w3 3 vscode
-set $w4 4 pianobar
-set $w5 5 firefox
-set $w6 6 slack
-set $w7 7 discord
+set $w1 1 general
+set $w2 2 firefox
+set $w3 3 code
+set $w4 4 chat
+set $w5 5 
+set $w6 6 
+set $w7 7 
 set $w8 8 
 set $w9 9
 set $w10 10
@@ -188,17 +188,14 @@ for_window [class="Code"] move container to workspace $w3
 #put a pianobar session in tab 4
 exec --no-startup-id "i3-msg 'workspace $w4; exec gnome-terminal -e pianobar'"
 
-#for_window [class="MPLAB X IDE.*"] move container to workspace $w8
-#exec --no-startup-id mplab_ide
-
 for_window [class="Slack"] move container to workspace $w6
 #exec --no-startup-id slack
 
 for_window [class="discord"] move container to workspace $w7
 #exec --no-startup-id discord
 
-# Automatically restore previously saved layout for admin
-exec --no-startup-id "i3-msg 'workspace 1 admin; append_layout ~/.config/i3/workspace-1_admin.json'"
+# Open the admin quad layout in $w1, using nautilus file browser
+exec --no-startup-id "i3-msg 'workspace $w1; append_layout ~/.config/i3/workspace-admin_quad_nautilus.json'"
 exec gnome-terminal --role=admin1
 exec gnome-terminal --role=admin3
 exec gnome-terminal --role=admin4
