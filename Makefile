@@ -15,8 +15,7 @@ update:
 	cp ~/.zshrc $(DIR)/.
 	cp ~/.bashrc $(DIR)/.
 	cp ~/.aliases $(DIR)/.
-	cp ~/.config/i3/config $(DIR)/.config/i3/config
-	cp ~/.config/i3/workspace-admin_quad_nautilus.json $(DIR)/.config/i3/workspace-admin_quad_nautilus.json
+	cp ~/.config/i3/* $(DIR)/.config/i3/.
 
 .PHONY: diff
 diff:
@@ -24,6 +23,7 @@ diff:
 	diff $(DIR)/.zshrc ~/. || echo "differences with .zshrc"
 	diff $(DIR)/.bashrc ~/. || echo "differences with .bashrc"
 	diff $(DIR)/.aliases ~/.aliases || echo "differences with .aliases"
-	diff $(DIR)/.config/i3/config ~/.config/i3/config || echo "differences with i3 config"
-	diff $(DIR)/.config/i3/workspace-admin_quad_nautilus.json ~/.config/i3/workspace-admin_quad_nautilus.json || echo "differences with workspace-admin_quad_nautilus.json"
+	for fnam in $$(ls $(DIR)/.config/i3/); do \
+		diff $(DIR)/.config/i3/$${fnam} ~/.config/i3/$${fnam} || echo "differences with $${fnam}" ; \
+	done
 
