@@ -26,4 +26,3 @@ diff:
 	for fnam in $$(ls $(DIR)/.config/i3/); do \
 		diff $(DIR)/.config/i3/$${fnam} ~/.config/i3/$${fnam} || echo "differences with $${fnam}" ; \
 	done
-
