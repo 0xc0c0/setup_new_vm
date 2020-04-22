@@ -52,15 +52,38 @@
                     ]
                 },
                 {
-                    "border": "none",
-                    "current_border_width": 3,
+                    "border": "normal",
                     "floating": "auto_off",
-                    "name": "Nautilus Home",
+                    "layout": "stacked",
                     "percent": 0.382,
-                    "swallows": [
-                       {
-                       "class": "Nautilus$"
-                       }
+                    "type": "con",
+                    "nodes": [
+                        {
+                            "border": "none",
+                            "current_border_width": 3,
+                            "floating": "auto_off",
+                            "name": "Nautilus Home",
+                            "percent": 0.5,
+                            "swallows": [
+                               {
+                               "class": "Nautilus$"
+                               }
+                            ],
+                            "type": "con"
+                        },
+                        {
+                            "border": "none",
+                            "current_border_width": 3,
+                            "floating": "auto_off",
+                            "name": "Firefox",
+                            "percent": 0.5,
+                            "swallows": [
+                               {
+                               "class": "^Firefox-esr$"
+                               }
+                            ],
+                            "type": "con"
+                        }
                     ],
                     "type": "con"
                 }

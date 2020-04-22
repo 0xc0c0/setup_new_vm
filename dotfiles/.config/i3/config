@@ -190,12 +190,12 @@ for_window [class="Slack"] move container to workspace $w4
 for_window [class="discord"] move container to workspace $w4
 #exec --no-startup-id discord
 
-for_window [class="Firefox"] move container to workspace $w5
-exec --no-startup-id firefox
+#for_window [class="Firefox"] move container to workspace $w5
 
 # Open the admin quad layout in $w1, using nautilus file browser
 exec --no-startup-id "i3-msg 'workspace $w1; append_layout ~/.config/i3/layout-dev_3multi_1filebrowser_5terminals_pianobar.json'"
-exec gnome-terminal --role=pianobar -- pianobar || exit
+exec gnome-terminal --role=pianobar -x zsh -c "[[ command -v pianobar ]] && pianobar || exit"
+exec --no-startup-id firefox
 exec gnome-terminal --role=terminal1
 exec gnome-terminal --role=terminal2
 exec gnome-terminal --role=terminal3
