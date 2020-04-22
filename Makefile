@@ -19,9 +19,9 @@ update:
 
 .PHONY: diff
 diff:
-	diff $(DIR)/.vimrc ~/. || echo "differences with .vimrc"
-	diff $(DIR)/.zshrc ~/. || echo "differences with .zshrc"
-	diff $(DIR)/.bashrc ~/. || echo "differences with .bashrc"
+	diff $(DIR)/.vimrc ~/.vimrc || echo "differences with .vimrc"
+	diff $(DIR)/.zshrc ~/.zshrc || echo "differences with .zshrc"
+	diff $(DIR)/.bashrc ~/.bashrc || echo "differences with .bashrc"
 	diff $(DIR)/.aliases ~/.aliases || echo "differences with .aliases"
 	for fnam in $$(ls $(DIR)/.config/i3/); do \
 		diff $(DIR)/.config/i3/$${fnam} ~/.config/i3/$${fnam} || echo "differences with $${fnam}" ; \

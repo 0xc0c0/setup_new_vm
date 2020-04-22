@@ -121,3 +121,6 @@ if [[ $(command -v figlet) ]] && [[ $(command -v lolcat) ]]; then
     figlet -c -t "$(whoami)" -f slant | lolcat
     figlet -c -k -t "$(hostname)" -f small | lolcat
 fi
+if [[ -d ~/.yarn/bin ]]; then
+    export PATH=/home/coco/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/home/coco/.yarn/bin:~/.yarn/bin
+fi
