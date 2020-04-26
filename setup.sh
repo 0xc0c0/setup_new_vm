@@ -72,17 +72,7 @@ echo "Install dotfiles? (default=No, enter 'Yes' for yes)"
 read input
 if [[ $input == "Yes" ]]; then
     #dotfiles installation
-    if [[ -d .git ]] && [[ "$(cat .git/config)" =~ '0xc0c0/setup_new_vm.git' ]]; then
-        #the repo was already cloned before this file was run
-        make install
-    else
-        #this file was run using a piped shell command, need the repo now
-        mkdir -p "$LOCAL_GIT"
-        git clone https://github.com/0xc0c0/setup_new_vm.git "$LOCAL_GIT"/setup_new_vm
-        cd "$LOCAL_GIT"/setup_new_vm
-        make install
-        cd -
-    fi
+    source <(curl https://raw.githubusercontent.com/0xc0c0/dotfiles/master/.dotfiles_other/setup.sh)
 fi
 
 echo "Setup gnome-terminal config? (default=No, enter 'Yes' for yes)"

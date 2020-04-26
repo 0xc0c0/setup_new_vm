@@ -1,6 +1,6 @@
 # Recommended Installation
 `sudo apt-get install curl`\
-`bash -c "$(curl https://raw.githubusercontent.com/c0c0-work/setup_new_vm/master/setup.sh)"`
+`bash -c "$(curl https://raw.githubusercontent.com/0xc0c0/setup_new_vm/master/setup.sh)"`
 
 ## setup.sh
 script to run on new Ubuntu 18.04 installation:
@@ -11,11 +11,33 @@ script to run on new Ubuntu 18.04 installation:
   - installs decent dotfiles (per this repo)
 
 ## dotfiles
-dotfiles basic install & update via the Makefile
+Installs dotfiles via [here](https://raw.githubusercontent.com/0xc0c0/dotfiles/master/.dotfiles_other/setup.sh)
 
-### install
-`make install`
+## How an external user can then migrate to their own dotfiles 
 
-### update local repo files from your active dotfiles in your ~/ directory
-`make update`
+First login to github and create your own **dotfiles** repo there.  Then update the git repo to your repo with
 
+```
+dotfiles config --local remote.origin.url https://github.com/<user>/dotfiles.git
+```
+
+Display all files
+
+```
+dotfiles status -u
+```
+
+Add files you care to add
+
+```
+dotfiles add <files>
+```
+
+Commit and push
+
+```
+dotfiles commit -am 'updated files'
+dotfiles push
+```
+
+Enjoy!
