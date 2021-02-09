@@ -73,6 +73,12 @@ read input
 if [[ $input == "Yes" ]]; then
     #dotfiles installation
     source <(curl https://raw.githubusercontent.com/0xc0c0/dotfiles/master/.dotfiles_other/setup.sh)
+    echo "Install lolcat and figlet for cleaner login prompt? (default=No, enter 'Yes' for yes)"
+    read input
+    if [[ ${input} == "Yes" ]]; then
+        sudo apt-get install -y lolcat figlet
+        [[ $? -eq 0 ]]  && echo Tool installation succeeded. || echo Tool installation failed.
+    fi
 fi
 
 echo "Setup gnome-terminal config? (default=No, enter 'Yes' for yes)"
