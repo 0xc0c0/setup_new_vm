@@ -61,11 +61,14 @@ if [[ $input == "Yes" ]]; then
         rm -rf ~/.oh-my-zsh
     fi
     sudo apt-get install -y zsh fonts-powerline
-    sh -c "$(curl https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-    $(grep 'export ZSH=' ~/.zshrc | sed s/\"//g)
-    export ZSH_CUSTOM=$ZSH/custom
-    git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+    sh -c "$(curl https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh --unattended)"
+    if [[ ! -z "$(which zsh)" ]]; then
+        sudo chsh -s $(which zsh) $(whoami)
+        $(grep 'export ZSH=' ~/.zshrc | sed s/\"//g)
+        export ZSH_CUSTOM=$ZSH/custom
+        git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
+        git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+    fi
 fi
 
 echo "Install dotfiles? (default=No, enter 'Yes' for yes)"
