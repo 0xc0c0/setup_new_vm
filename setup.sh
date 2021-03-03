@@ -61,7 +61,7 @@ if [[ $input == "Yes" ]]; then
         rm -rf ~/.oh-my-zsh
     fi
     sudo apt-get install -y zsh fonts-powerline
-    sh -c "$(curl https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh --unattended)"
+    sh -c "$(curl https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh) --unattended"
     if [[ ! -z "$(which zsh)" ]]; then
         sudo chsh -s $(which zsh) $(whoami)
         $(grep 'export ZSH=' ~/.zshrc | sed s/\"//g)
