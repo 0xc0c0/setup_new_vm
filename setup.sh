@@ -65,7 +65,7 @@ if [[ $input == "Yes" ]]; then
     if [[ ! -z "$(which zsh)" ]]; then
         sudo chsh -s $(which zsh) $(whoami)
         $(grep 'export ZSH=' ~/.zshrc | sed s/\"//g)
-        export ZSH_CUSTOM=$ZSH/custom
+        export ZSH_CUSTOM=$HOME/.oh-my-zsh/custom
         git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
         git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
     fi
