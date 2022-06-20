@@ -1,5 +1,5 @@
 # Recommended Installation
-`sudo apt-get install curl`\
+`sudo apt-get install -y curl`\
 `bash -c "$(curl https://raw.githubusercontent.com/0xc0c0/setup_new_vm/master/setup.sh)"`
 
 ## setup.sh
