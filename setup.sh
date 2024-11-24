@@ -17,17 +17,27 @@ else
     sudo apt-get install -y linux-headers-$(uname -r)
 fi
 
+#Install gnome
+echo "Install gnome? (default=No, enter 'Yes' for yes)"
+read input
+if [[ $input == "Yes" ]]; then
+    echo "Installing gnome..."
+    sudo apt-get update && sudo apt-get install -y gnome
+
+else
+    echo "Skipping gnome installation..."
+fi
+
 #Ubuntu package updates and installation
 echo "Install i3? (default=No, enter 'Yes' for yes)"
 read input
 if [[ $input == "Yes" ]]; then
     echo "Installing i3..."
-    sudo apt-get update && sudo apt-get install -y i3 gnome pianobar
+    sudo apt-get update && sudo apt-get install -y i3 pianobar
 
 else
     echo "Skipping i3 installation..."
 fi
-
 
 LOCAL_GIT=~/.local/git
 
